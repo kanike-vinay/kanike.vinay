@@ -1,0 +1,59 @@
+<div class="tabContentContainer">
+<mat-card class="modem-card">
+  <mat-card-header>
+    <mat-card-title>Modem Info</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+  <form [formGroup]="addModemForm" class="add-modem-container" novalidate>
+    
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Make" formControlName="make">
+      <mat-error *ngIf="addModemForm.controls['make'].hasError('required')">
+        Make is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Model" formControlName="model">
+      <mat-error *ngIf="addModemForm.controls['model'].hasError('required')">
+        Mode is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Access Technology" formControlName="accessTechnology">
+      <mat-error *ngIf="addModemForm.controls['accessTechnology'].hasError('required')">
+        Access Technology is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+          
+    <mat-form-field>
+      <input matInput placeholder="Max Speed" type="number" formControlName="maxSpeed">
+      <mat-error *ngIf="addModemForm.controls['maxSpeed'].hasError('required')">
+        Max Speed is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Manual Override" formControlName="manulaOverride">
+        <mat-option value=null>None</mat-option>
+        <mat-option value="Y">Y</mat-option>
+        <mat-option value="N">N</mat-option>
+      </mat-select>
+    </mat-form-field>
+                    
+    <mat-form-field>
+      <mat-select placeholder="End Of Life" name="endOfLife" formControlName="endOfLife" >
+        <mat-option value=null>None</mat-option>
+        <mat-option value="Y">Y</mat-option>
+        <mat-option value="N">N</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color="primary" [disabled]="!addModemForm.valid" (click)="saveModemInfo(addModemForm)">Save</button>
+      <button mat-raised-button color="primary" (click)="addModemForm.reset()" >Reset</button>
+  </mat-card-actions>
+</mat-card>
+</div>

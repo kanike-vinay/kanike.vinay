@@ -1,0 +1,80 @@
+<mat-tab-group mat-stretch-tabs class="mat-elevation-z4">
+	<mat-tab>    
+        <ng-template mat-tab-label>
+          <mat-icon class="modem-tab-icon">create</mat-icon>
+            Update Modem Compatibility Info
+        </ng-template>
+        <div class="tabContentContainer">
+          <mat-card class="modem-card">
+            <mat-card-header>
+              <mat-card-title>Modem Info</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            <form class="add-modem-container" #form="ngForm">
+                    <mat-form-field>
+                      <input matInput
+                      [(ngModel)]="updateInfo.position"
+                      placeholder="Make" 
+                      #make="ngModel" 
+                      name="make" 
+                      type="text" 
+                      disabled>
+                    </mat-form-field>
+          
+                    <mat-form-field>
+                      <input matInput
+                      [(ngModel)]="updateInfo.name"
+                      placeholder="Model" 
+                      #model="ngModel" 
+                      name="model" 
+                      type="text" 
+                      disabled>
+                    </mat-form-field>
+          
+                    <mat-form-field>
+                      <input matInput
+                      [(ngModel)]="updateInfo.weight"
+                      placeholder="Access Technology" 
+                      #accessTechnology="ngModel" 
+                      name="accessTechnology" 
+                      type="text" 
+                      disabled>
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                      <input matInput
+                      [(ngModel)]="updateInfo.symbol"
+                      placeholder="Max Speed" 
+                      #maxSpeed="ngModel" 
+                      name="maxSpeed" 
+                      type="text"
+                      style="background:#F5F5F5;border-color:#49A2BF;border-width:1.0pt;
+color:#666600;border-right-width:1.0pt;border-style:none" 
+                      disabled>
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                      <mat-select placeholder="Manual Override" name="manulaOverride" [(ngModel)]="manulaOverride">
+                        <mat-option>None</mat-option>
+                        <mat-option value="Y">Y</mat-option>
+                        <mat-option value="N">N</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                        <mat-select placeholder="End Of Life" name="endOfLife" [(ngModel)]="endOfLife">
+                          <mat-option>None</mat-option>
+                          <mat-option value="Y">Y</mat-option>
+                          <mat-option value="N">N</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                  </form>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="updateModemInfo(form)">Update</button>
+                <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+            </mat-card-actions>
+          </mat-card>
+          </div>
+	</mat-tab>
+</mat-tab-group>

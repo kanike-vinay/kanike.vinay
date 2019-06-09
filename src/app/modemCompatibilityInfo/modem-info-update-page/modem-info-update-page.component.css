@@ -1,0 +1,18 @@
+.add-modem-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-modem-container > * {
+    width: 100%;
+  }
+
+  .modem-card {
+    max-width: 100%;
+    max-height: 100%
+  }
+
+  .tabContentContainer {
+    border: 1px solid #aaaaaa;
+    background: #ffffff 50% 50% repeat-x;
+}
