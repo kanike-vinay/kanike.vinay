@@ -30,7 +30,8 @@
     "rxjs": "~6.3.3",
     "save-file": "^2.1.1",
     "xlsx": "^0.14.1",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "lodash.merge": ">=4.6.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
